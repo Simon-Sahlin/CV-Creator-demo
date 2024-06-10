@@ -48,6 +48,28 @@ em{
   color: var(--highLight);
 }
 
+button{
+  background-color: #c2e7ff;
+  color: #001d35;
+  font-family: var(--fontBody);
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button[disabled]{
+  opacity: 0.5;
+  cursor: auto;
+}
+
+#editPage{
+    display: flex;
+    justify-content: space-around;
+}
+
 body{
   background-color: var(--backgroundColor);
   display: flex;
@@ -62,10 +84,6 @@ body{
   width: 900px;
   margin: 20px;
   padding: 60px 80px;
-
-  display: flex;
-  flex-direction: column;
-  /* gap: 10px; */
 }
 
 section{
@@ -80,6 +98,8 @@ section > div{
 
 .sectionContent{
   border-top: 4px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 article{
