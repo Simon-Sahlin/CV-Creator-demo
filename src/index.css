@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --backgroundColor: #f9fbfd;
+  --foreGround: #ffffff;
+  --middleGround: #b6b6b6;
+  --highLight: #d95c20;
+  --dimText: #696969;
+  --textCol: black;
+
+  --fontHead: 'Raleway';
+  --fontBody: 'Lato';
+}
+
+h1,h2{
+  font-family: var(--fontHead);
+}
+p, h3{
+  font-family: var(--fontBody);
+}
+h1{
+  font-size: 2em;
+  font-weight: 800;
+}
+h2{
+  font-size: 1.5em;
+  font-weight: 500;
+}
+h3{
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.datePlace{
+  font-size: 0.9em;
+  color: var(--dimText);
+}
+p{
+  font-size: 1em;
+}
+em{
+  color: var(--highLight);
+}
+
+body{
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page{
+  background-color: var(--foreGround);
+  /* border: 1px solid var(--middleGround); */
+  box-shadow: 0px 0px 2px var(--middleGround);
+  width: 900px;
+  margin: 20px;
+  padding: 60px 80px;
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+section{
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+section > div{
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+.sectionContent{
+  border-top: 4px solid black;
+}
+
+article{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
