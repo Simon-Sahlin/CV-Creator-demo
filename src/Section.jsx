@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 
 function Section({title}){
@@ -18,6 +19,18 @@ function Section({title}){
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, delectus!"
         }
     ]
+
+    const [company, setCompany] = useState("")
+    const [workTitle, setWorkTitle] = useState("")
+    const [date, setDate] = useState("")
+    const [place, setPlace] = useState("")
+    const [desc, setDesc] = useState("")
+
+    function updateCompany(e){ setCompany(e.target.value) }
+    function updateWorkTitle(e){ setWorkTitle(e.target.value) }
+    function updateDate(e){ setDate(e.target.value) }
+    function updatePlace(e){ setPlace(e.target.value) }
+    function updateDesc(e){ setDesc(e.target.value) }
     
     return(
         <section>
@@ -34,6 +47,10 @@ function Section({title}){
                         </article>
                     )
                 })}
+
+                <article>
+
+                </article>
             </div>
     </section>
     )
