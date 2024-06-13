@@ -1,24 +1,24 @@
 import { useState } from "react"
 
 
-function Section({title}){
+function Section({title, editEnabled}){
     
-    const items = [
-        {
-            company: "Company1",
-            title: "Title1",
-            date: "Time - time",
-            place: "Place",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, delectus!"
-        },
-        {
-            company: "Company2",
-            title: "Title2",
-            date: "Time - time",
-            place: "Place",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, delectus!"
-        }
-    ]
+    const [items, setItems] = useState([
+        // {
+        //     company: "Company1",
+        //     title: "Title1",
+        //     date: "Time - time",
+        //     place: "Place",
+        //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, delectus!"
+        // },
+        // {
+        //     company: "Company2",
+        //     title: "Title2",
+        //     date: "Time - time",
+        //     place: "Place",
+        //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, delectus!"
+        // }
+    ])
 
     const [company, setCompany] = useState("")
     const [workTitle, setWorkTitle] = useState("")
@@ -32,6 +32,26 @@ function Section({title}){
     function updatePlace(e){ setPlace(e.target.value) }
     function updateDesc(e){ setDesc(e.target.value) }
     
+    function submitForm(){
+        let newObject =         {
+            company: company,
+            title: workTitle,
+            date: date,
+            place: place,
+            description: desc
+        }
+        setItems([...items, newObject]);
+        clearForm();
+    }
+
+    function clearForm(){
+        setCompany("");
+        setWorkTitle("");
+        setDate("");
+        setPlace("");
+        setDesc("");
+    }
+
     return(
         <section>
             <div className="sectionHeader">
@@ -48,9 +68,23 @@ function Section({title}){
                     )
                 })}
 
-                <article>
-
-                </article>
+                {editEnabled && (
+                    <article>
+                        <h3>Add Item</h3>
+                        <label htmlFor="company">Company</label>
+                        <input id='company' type="text" value={company} onChange={(e)=>updateCompany(e)}/>
+                        <label htmlFor="workTitle">Title</label>
+                        <input id='workTitle' type="text" value={workTitle} onChange={(e)=>updateWorkTitle(e)}/>
+                        <label htmlFor="date">Date</label>
+                        <input id='date' type="text" value={date} onChange={(e)=>updateDate(e)}/>
+                        <label htmlFor="place">Place</label>
+                        <input id='place' type="text" value={place} onChange={(e)=>updatePlace(e)}/>
+                        <label htmlFor="desc">Description</label>
+                        <input id='desc' type="text" value={desc} onChange={(e)=>updateDesc(e)}/>
+                        <button onClick={submitForm}>Add Item</button>
+                        <button onClick={clearForm}>Clear</button>
+                    </article>
+                )}
             </div>
     </section>
     )

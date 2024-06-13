@@ -23,7 +23,8 @@ function App() {
       <div className="page">
         <HeaderSec editEnabled={editEnabled} />
 
-        <Section title="poop"/>
+        <Section title="Experience" editEnabled={editEnabled}/>
+        <Section title="Education" editEnabled={editEnabled}/>
       </div>
     </>
   )
